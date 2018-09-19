@@ -33,10 +33,11 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 # Application definition
 
 INSTALLED_APPS = [
-    'lender_books',
     'django_lender',
+    'lender_books',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django_registration',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -80,10 +81,10 @@ WSGI_APPLICATION = 'django_lender.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
+        'NAME': os.environ.get('DB_NAME', 'test_books'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': os.environ.get('DB_PORT', 5432),
         'TEST': {
             'NAME': 'lender_test'
@@ -132,6 +133,19 @@ STATIC_URL = '/static/'
 
 # CUSTOM SETTINGS GO DOWN HERE
 
+# Image Upload settings
+
 MEDIA_ROOT = '/static-assets/'
 
 MEDIA_URL = '/static-assets/'
+
+# Django Registration settings
+
+ACCOUNT_ACTIVATION_DAYS = 1
+
+LOGIN_REDIRECT_URL = '/'
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

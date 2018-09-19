@@ -1,9 +1,5 @@
 from django.db import models
-
-
-def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
-    return 'user_{0}/{1}'.format(instance.user.id, filename)
+from django.contrib.auth.models import User
 
 
 class Book(models.Model):
@@ -45,7 +41,10 @@ class Book(models.Model):
         ('1988', '1988'),
         ('1987', '1987'),
     ]
-    cover_image = models.FileField(upload_to='static')
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
+    # cover_image = models.FileField(upload_to='uploads/')
+    # cover_image = models.ImageField(upload_to=user_directory_path)
     title = models.CharField(max_length=48)
     author = models.CharField(max_length=48)
     year = models.CharField(choices=YEARS, default='2018', max_length=48)
