@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Django Lender</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <!-- <li><a href="{% url "home"%}"></a></li> -->
+        <li><a href="/"> Home</a></li>
+        <li><a href="{% url "books_list" %}">Books</a></li>
+        <li><a href="/admin/">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    <h3>No content</h3>
+    {% endblock %}
+  </main>
+</body>
+</html>

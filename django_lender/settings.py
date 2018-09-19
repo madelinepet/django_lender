@@ -33,6 +33,8 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 # Application definition
 
 INSTALLED_APPS = [
+    'lender_books',
+    'django_lender',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,3 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # CUSTOM SETTINGS GO DOWN HERE
+
+MEDIA_ROOT = '/static-assets/'
+
+MEDIA_URL = '/static-assets/'

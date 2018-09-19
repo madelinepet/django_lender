@@ -2,9 +2,10 @@ version: '3'
 
 services:
   db:
-    image: postgres:latest
+    image: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
   web:
     build: .
     env_file: .env
