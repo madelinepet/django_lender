@@ -1,11 +1,15 @@
 from django.test import TestCase, RequestFactory
 from .models import Book
+from django.contrib.auth.models import User
 
 
 class TestBookModel(TestCase):
     def setUp(self):
         # add to db through model
-        self.book = Book.objects.create(title='Feed the Kat')
+        self.user = User.objects.create(username='test', email='test@example.com')
+        # set an encrypted password
+        self.user.set_password('hello')
+        self.book = Book.objects.create(title='Feed the Kat', author='Your dog', user=self.user)
         Book.objects.create(title='Eat some pie')
 
     def test_book_titles(self):
