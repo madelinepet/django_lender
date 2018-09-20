@@ -133,6 +133,11 @@ STATIC_URL = '/static/'
 
 # CUSTOM SETTINGS GO DOWN HERE
 
+
+# os.path business gets you to the root of your directory. For production!
+# (While debug = True, django doesn't use static root)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Image Upload settings
 
 MEDIA_ROOT = '/static-assets/'
