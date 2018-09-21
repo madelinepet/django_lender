@@ -1,34 +1,58 @@
 *{
   box-sizing: border-box;
-  /* margin: 1em; */
-  /* padding: 1em; */
   }
 
 h1 {
     color: blue;
     position: relative;
-    left: 30px;
+    left: 20px;
     font-size: 3em;
     font-family: 'Josefin Sans', sans-serif;
-    /* margin: 1em; */
   }
 
-h2 {
+h2, h3 {
     margin: 1em;
     font-size: 1.5em;
 }
 
 nav {
     margin: 1em;
+    margin-left: 0em;
     font-size: 1em;
     padding: 0.5;
     padding-right: 4em;
     display: inline-block;
 }
 
-li {
+a:hover {
+    color:red;
+    font-size: 1.02em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button:hover {
+    color: red;
+    font-size: 1.5em;
+    border: 0.2em solid yellow;
+}
+
+.button {
+    font-size: 1.5em;
+    padding: 0.8em;
+    border: 0.2em solid green;
+    border-radius: 0.5em;
+}
+
+li, h3, .detail {
     margin-top: 1em;
     margin-bottom: 0.5em;
+}
+
+h3, .detail {
+    margin-left: 2em;
 }
 
 .menu {
@@ -38,6 +62,7 @@ li {
 
 .home {
     font-weight: bolder;
+    color: red;
 }
 
 div {
@@ -58,8 +83,15 @@ form {
 
 input[type="submit"] {
     margin-top: 3em;
+    height: 3em;
 }
 
 .helptext {
     margin-left: 1em;
+}
+
+img {
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+    width: 90%;
 }
