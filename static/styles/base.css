@@ -1,0 +1,99 @@
+*{
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  }
+
+h1 {
+    color: blue;
+    position: relative;
+    left: 20px;
+    font-size: 3em;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+h2, h3 {
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+nav {
+    margin: 1em;
+    margin-left: 0em;
+    font-size: 1em;
+    padding: 0.5;
+    padding-right: 4em;
+    display: inline-block;
+}
+
+a:hover {
+    color:red;
+    font-size: 1.02em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button:hover {
+    color: red;
+    font-size: 1.5em;
+    border: 0.2em solid yellow;
+}
+
+.button {
+    font-size: 1.5em;
+    padding: 0.8em;
+    border: 0.2em solid green;
+    border-radius: 0.5em;
+}
+
+li, h3, .detail {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h3, .detail {
+    margin-left: 2em;
+}
+
+.menu {
+    margin: 2em;
+    float: left;
+}
+
+.home {
+    font-weight: bolder;
+    color: red;
+}
+
+div {
+    margin-top: 3em;
+}
+
+p {
+    margin-top: 2em;
+}
+
+label {
+    font-weight: bold;
+}
+
+form {
+    margin-left: 2em;
+}
+
+input[type="submit"] {
+    margin-top: 3em;
+    height: 3em;
+}
+
+.helptext {
+    margin-left: 1em;
+}
+
+img {
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+    width: 90%;
+}
